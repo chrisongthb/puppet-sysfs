@@ -2,7 +2,7 @@ class sysfs {
 
   ensure_packages(['sysfsutils'])
 
-  case $osfamily {
+  case $facts['os']['family'] {
     /^(Debian|Ubuntu)$/: {
       exec {
         'sysfsutils':
