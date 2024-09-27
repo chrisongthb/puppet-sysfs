@@ -1,10 +1,10 @@
 define sysfs::setting($value) {
 
-    include sysfs
+  include sysfs
 
-    concat::fragment {
-        "${name}":
-            target => "/etc/sysfs.conf",
-            content => "${name}=${value}\n";
-    }
+  concat::fragment {
+    $name:
+      target  => '/etc/sysfs.conf',
+      content => "${name}=${value}\n";
+  }
 }
